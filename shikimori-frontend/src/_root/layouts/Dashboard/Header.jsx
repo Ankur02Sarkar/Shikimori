@@ -1,13 +1,13 @@
 import { Button, Tooltip, Typography } from "@material-tailwind/react";
-// import Lottie from "lottie-react";
-// import loader from "../../../data/animation/loader2.json";
+import Lottie from "lottie-react";
+import loader from "../../../data/animation/loader2.json";
 import Wrapper from "../../components/Wrapper";
 import Gravatar from "react-gravatar";
 import { useSelector } from "react-redux";
 import GeminiLogo from "../../components/GeminiLogo";
 import { RiLogoutBoxRLine } from "react-icons/ri";
 import Cookies from "js-cookie";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { RouterData } from "../../../router/RouterData";
 import toast from "react-hot-toast";
 
@@ -29,21 +29,23 @@ const Header = () => {
       <Wrapper>
         <div className="flex flex-row items-center justify-between gap-6">
           <div className="flex flex-row items-center">
-            {/* <Lottie
-              animationData={loader}
-              loop={true}
-              className="size-[60px] relative z-10"
-            /> */}
-            <div className="size-[80px] bg-primary blur-[80px]  absolute -top-4 -left-2 -z-1"></div>
-            <Typography
-              variant="h3"
-              className="font-primary text-white font-normal -ml-1"
-            >
-              Shikimori
-            </Typography>
-            <div className="w-[80px] sm:w-[100px] ml-2 flex ">
-              <GeminiLogo />
-            </div>
+            <Link to={"/"} className="flex flex-row items-center gap-2">
+              <Lottie
+                animationData={loader}
+                loop={true}
+                className="size-[60px] relative z-10"
+              />
+              <div className="size-[80px] bg-primary blur-[80px]  absolute -top-4 -left-2 -z-1"></div>
+              <Typography
+                variant="h3"
+                className="font-primary text-white font-normal -ml-1"
+              >
+                Shikimori
+              </Typography>
+              <div className="w-[80px] sm:w-[100px] ml-2 flex ">
+                <GeminiLogo />
+              </div>
+            </Link>
           </div>
           <div className="flex flex-row items-center gap-3">
             <div className="flex flex-row items-center gap-2">

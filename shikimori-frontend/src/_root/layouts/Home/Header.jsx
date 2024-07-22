@@ -4,6 +4,8 @@ import { RiLoginCircleLine } from "react-icons/ri";
 import { PrimaryBtn } from "../../../components/Button";
 import { Link, useNavigate } from "react-router-dom";
 import { RouterData } from "../../../router/RouterData";
+import Lottie from "lottie-react";
+import loader from "../../../data/animation/loader2.json";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -13,7 +15,12 @@ const Header = () => {
       <Wrapper>
         <div className="flex flex-row items-center justify-between gap-4 flex-wrap">
           <div className="flex items-center gap-2">
-            <Link to={"/"}>
+            <Link to={"/"} className="flex flex-row items-center gap-1">
+              <Lottie
+                animationData={loader}
+                loop={true}
+                className="size-[60px] relative z-10"
+              />
               <Typography
                 variant="h3"
                 className="font-primary text-white font-normal"
